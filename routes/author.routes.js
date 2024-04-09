@@ -49,7 +49,7 @@ router.get("/name/:name", async (req, res) => {
   const name = req.params.name;
 
   try {
-    const author = await Book.find({ name: new RegExp("^" + name.toLowerCase(), "i") });
+    const author = await Author.find({ name: new RegExp("^" + name.toLowerCase(), "i") });
 
     if (author?.length) {
       res.json(author);
